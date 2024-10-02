@@ -1,0 +1,14 @@
+.card
+{
+    margin: 5px;
+    padding: 5px;
+    width: 150px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.dashboard
+{
+    margin: 0 150px;
+}
