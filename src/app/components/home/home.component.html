@@ -1,0 +1,15 @@
+<h1>Pokemon Baseworks</h1>
+<main>
+    <section class="dashboard dynamic-display search-results"
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="500"
+        (scrolled)="onScroll()"
+        [scrollWindow]="false">
+        <div class="card dynamic-display" *ngFor="let item of pokemonsList">
+            <img [src]="item.image" alt="Place image title">
+            <p>{{item.name}} - {{item.id}}</p>
+        </div>
+    </section>
+    <div *ngIf="isLoading">...Loading</div>
+</main>
