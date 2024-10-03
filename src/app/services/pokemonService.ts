@@ -10,7 +10,7 @@ export class PokemonService {
 
     constructor(private http: HttpClient) { }
 
-    public getPokemons(pokemonId: string): Observable<any> {
+    public getPokemonDetail(pokemonId: string): Observable<any> {
         return this.http.get(`${this.baseUrl}${pokemonId}`).pipe();
     }
 }
