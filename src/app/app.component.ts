@@ -1,8 +1,11 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { HomeComponent } from "./components/home/home.component";
-import { PokemonService } from "./services/pokemonService";
 import { HttpClientModule } from "@angular/common/http";
+
+import { PokemonService } from "./services/pokemonService";
+
+import { HomeComponent } from "./components/home/home.component";
+import { PokemonDetailComponent } from "./components/pokemon-detail/pokemon-detail.component";
 
 @Component({
 	selector: "app-root",
@@ -10,6 +13,7 @@ import { HttpClientModule } from "@angular/common/http";
 	imports: [
 		RouterOutlet,
 		HomeComponent,
+		PokemonDetailComponent,
 		HttpClientModule,
 	],
 	providers: [
