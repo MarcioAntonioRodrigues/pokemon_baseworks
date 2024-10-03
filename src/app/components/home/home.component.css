@@ -12,3 +12,12 @@
 {
     margin: 0 150px;
 }
+
+/*infinite-scroll*/
+.search-results
+{
+    height: 30rem;
+    overflow: scroll;
+    flex-direction: column;
+    align-items: center;
+}

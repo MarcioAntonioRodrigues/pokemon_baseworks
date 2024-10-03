@@ -1,35 +1,74 @@
 import { Component, OnInit } from "@angular/core";
 import { PokemonService } from "../../services/pokemonService";
 import { CommonModule } from "@angular/common";
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { delay, Observable, of } from 'rxjs';
 
 @Component({
 	selector: "home",
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, InfiniteScrollModule],
 	templateUrl: "./home.component.html",
 	styleUrl: "./home.component.css",
 })
 export class HomeComponent implements OnInit {
 	public pokemonsList: any = [];
-	private totalCount: number = 20;
 
-	constructor(private pokemonService: PokemonService) {
+	//infinite-scroll
+	public items: string[] = [];
+	public isLoading = false;
+	currentPage = 1;
+	itemsPerPage = 10;
+	totalItems = 200;
 
-	}
+	constructor(private pokemonService: PokemonService) { }
+
 	ngOnInit(): void {
-		for (let index = 1; index < this.totalCount; index++) {
-			this.pokemonService.getPokemons(index.toString()).subscribe(
-				{
-					next: (x) => {
-						this.pokemonsList.push({
-							name: x.name,
-							id: x.id,
-							image: x.sprites.front_default
-						})
+		this.loadData();
+	}
+
+	toogleLoading = () => this.isLoading = !this.isLoading;
+
+	loadData = () => {
+		this.toogleLoading();
+		this.getPokemons(this.currentPage, this.itemsPerPage);
+	}
+
+	appendData = () => {
+		this.toogleLoading();
+		this.getPokemons(this.currentPage, this.itemsPerPage).subscribe({
+			next: res => this.items = [...this.items, ...res],
+			complete: () => this.toogleLoading()
+		})
+	}
+
+	onScroll = () => {
+		this.currentPage++;
+		this.appendData();
+	}
+
+	public getPokemons = (page = 1, itemsPerPage = 10) => {
+		const startIndex = (page - 1) * itemsPerPage;
+		const endIndex = startIndex + itemsPerPage;
+
+		for (let index = startIndex; index < endIndex; index++) {
+			if (index < this.totalItems) {
+				this.pokemonService.getPokemons(index.toString()).subscribe(
+					{
+						next: (x) => {
+							this.pokemonsList.push({
+								name: x.name,
+								id: x.id,
+								image: x.sprites.front_default
+							},)
+						},
+						complete: () => this.toogleLoading()
 					}
-				}
-			);
+				);
+			}
 		}
-		console.log('lista', this.pokemonsList);
+
+		return of(this.pokemonsList)
+			.pipe(delay(500));
 	}
 }
