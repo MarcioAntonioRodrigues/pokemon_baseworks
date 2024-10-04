@@ -43,17 +43,17 @@ export class HomeComponent implements OnInit {
 	}
 
 	onScroll = () => {
-		this.currentPage++;
+		this.currentPage += this.itemsPerPage;
 		this.appendData();
 	}
 
 	public getPokemons = (page = 1, itemsPerPage = 10) => {
-		const startIndex = (page - 1) * itemsPerPage;
+		const startIndex = page;
 		const endIndex = startIndex + itemsPerPage;
 
 		for (let index = startIndex; index < endIndex; index++) {
 			if (index < this.totalItems) {
-				this.pokemonService.getPokemons(index.toString()).subscribe(
+				this.pokemonService.getPokemonDetail(index.toString()).subscribe(
 					{
 						next: (x) => {
 							this.pokemonsList.push({
