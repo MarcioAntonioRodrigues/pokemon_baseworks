@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrl: './pokemon-detail.component.css'
 })
 export class PokemonDetailComponent implements OnInit {
-
+	public pokemon: any;
 	ngOnInit(): void {
 
 	}
