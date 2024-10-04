@@ -16,4 +16,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Dependencies
 
-Run npm install ngx-infinite-scroll
+Run `npm install` ngx-infinite-scroll
