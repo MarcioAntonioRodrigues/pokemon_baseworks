@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { PokemonService } from "../../services/pokemonService";
 import { CommonModule } from "@angular/common";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
-import { delay, Observable, of } from 'rxjs';
+import { delay, of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: "home",
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
 	itemsPerPage = 10;
 	totalItems = 200;
 
-	constructor(private pokemonService: PokemonService) { }
+	constructor(private pokemonService: PokemonService,
+		private router: Router) { }
 
 	ngOnInit(): void {
 		this.loadData();
@@ -70,5 +72,10 @@ export class HomeComponent implements OnInit {
 
 		return of(this.pokemonsList)
 			.pipe(delay(500));
+	}
+
+	public goToDetail(pokemon: any) {
+		const pokemonId = pokemon ? pokemon.id : null;
+		this.router.navigate(['/detail', pokemonId]);
 	}
 }
