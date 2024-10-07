@@ -1,1 +1,7 @@
-<p>pokemon-detail works!</p>
+<section *ngIf="pokemon" class="card dynamic-display">
+    <img [src]="pokemon.urlImage" alt="Place image title">
+    <p>{{pokemon.name}}</p>
+    <div *ngFor="let stat of pokemon.stats">
+        <p>{{stat.stat.name}}: {{stat.base_stat}}</p>
+    </div>
+</section>

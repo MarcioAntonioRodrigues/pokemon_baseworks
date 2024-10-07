@@ -6,7 +6,10 @@
         [infiniteScrollThrottle]="500"
         (scrolled)="onScroll()"
         [scrollWindow]="false">
-        <div class="card dynamic-display" *ngFor="let item of pokemonsList">
+        <div 
+            class="card dynamic-display"
+            *ngFor="let item of pokemonsList"
+            (click)="goToDetail(item)">
             <img [src]="item.image" alt="Place image title">
             <p>{{item.name}} - {{item.id}}</p>
         </div>
