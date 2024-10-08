@@ -39,4 +39,8 @@ export class PokemonDetailComponent implements OnInit {
 		});
 	}
 
+	public backToHome() {
+		this.router.navigateByUrl('/');
+	}
+
 }
