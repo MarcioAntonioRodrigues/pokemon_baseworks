@@ -15,18 +15,18 @@ import { PokemonTypeComponent } from "../pokemon-type/pokemon-type.component";
 export class HomeComponent implements OnInit {
 	public listView: any = [];
 	public pokemonsList: any = [];
+	public currentPage: number = 1;
 	public pokemonTypesList: any = [];
 
 	@ViewChild(PokemonTypeComponent) child: PokemonTypeComponent;
 
-	constructor(private pokemonService: PokemonService) { }
+	constructor(private pokemonService: PokemonService,
+		private router: Router) {
+		this.child = new PokemonTypeComponent(pokemonService, router);
+	}
 
 	ngOnInit(): void {
 		this.getPokemonTypes();
-	}
-
-	private resetValues() {
-		this.listView = [];
 	}
 
 	public getPokemonTypes() {
@@ -38,18 +38,10 @@ export class HomeComponent implements OnInit {
 	}
 
 	public onClickPokemonTypeBtn(url: string) {
-		this.resetValues();
+		this.child.resetValues();
 		fetch(url)
 			.then(res => res.json())
-			.then(data => this.pokemonsList = data.pokemon)
+			.then(data => this.child.pokemonsList = data.pokemon)
 			.then(() => this.child.getPokemons())
-	}
-
-	public getPokemonsByType(url: string) {
-		this.pokemonService.getPokemonsByUrl(url).subscribe({
-			next: res => {
-				this.pokemonsList = res.pokemon;
-			}
-		})
 	}
 }

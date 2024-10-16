@@ -13,27 +13,26 @@ import { PokemonService } from '../../services/pokemonService';
 	styleUrl: './pokemon-type.component.css'
 })
 export class PokemonTypeComponent {
-	@Input() pokemonsList: any;
-	@Input() listView: any = [];
+	public pokemonsList: any = [];
+	public listView: any = [];
 
-	//infinite-scroll
-	public items: string[] = [];
+	// infinite-scroll //
+	public totalItems = 200;
+	public itemsPerPage = 10;
 	public isLoading = false;
-	currentPage = 1;
-	itemsPerPage = 10;
-	totalItems = 200;
+	public items: string[] = [];
+	public currentPage: number = 1;
+	// infinite-scroll //
 
 	constructor(private pokemonService: PokemonService,
-		private router: Router) {
+		private router: Router) { }
 
+	resetValues = () => {
+		this.listView = [];
+		this.currentPage = 1;
 	}
 
 	toogleLoading = () => this.isLoading = !this.isLoading;
-
-	loadData = () => {
-		this.toogleLoading();
-		this.getPokemons(this.currentPage, this.itemsPerPage);
-	}
 
 	appendData = () => {
 		this.toogleLoading();
@@ -55,18 +54,20 @@ export class PokemonTypeComponent {
 		for (let index = startIndex; index < endIndex; index++) {
 			if (index < this.totalItems) {
 				const url = this.pokemonsList[index]?.pokemon?.url;
-				this.pokemonService.getPokemonsByUrl(url).subscribe(
-					{
-						next: (x) => {
-							this.listView.push({
-								name: x.name,
-								id: x.id,
-								image: x.sprites.front_default
-							},)
-						},
-						complete: () => this.toogleLoading()
-					}
-				);
+				if (url) {
+					this.pokemonService.getPokemonsByUrl(url).subscribe(
+						{
+							next: (x) => {
+								this.listView.push({
+									name: x.name,
+									id: x.id,
+									image: x.sprites.front_default
+								},)
+							},
+							complete: () => this.toogleLoading()
+						}
+					);
+				}
 			}
 		}
 		return of(this.pokemonsList)
