@@ -6,11 +6,19 @@ import { Observable } from 'rxjs';
 export class PokemonService {
 
     public pokemonsList: Array<any> = [];
-    public baseUrl: string = "https://pokeapi.co/api/v2/pokemon/";
+    public baseUrl: string = "https://pokeapi.co/api/v2/";
 
     constructor(private http: HttpClient) { }
 
     public getPokemonDetail(pokemonId: string): Observable<any> {
-        return this.http.get(`${this.baseUrl}${pokemonId}`).pipe();
+        return this.http.get(`${this.baseUrl}pokemon/${pokemonId}`).pipe();
+    }
+
+    public getPokemonTypes(): Observable<any> {
+        return this.http.get(`${this.baseUrl}type/`).pipe();
+    }
+
+    public getPokemonsByUrl(url: string): Observable<any> {
+        return this.http.get(url).pipe();
     }
 }
