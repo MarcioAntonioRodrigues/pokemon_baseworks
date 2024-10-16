@@ -1,18 +1,10 @@
 
 <main>
-    <section class="dashboard dynamic-display search-results"
-        infiniteScroll
-        [infiniteScrollDistance]="2"
-        [infiniteScrollThrottle]="500"
-        (scrolled)="onScroll()"
-        [scrollWindow]="false">
-        <div 
-            class="card dynamic-display"
-            *ngFor="let item of pokemonsList"
-            (click)="goToDetail(item)">
-            <img [src]="item.image" alt="Place image title">
-            <p>{{item.name}} - {{item.id}}</p>
-        </div>
+    <section>
+        <h3>Selecione o tipo de Pokemon</h3>
+        <article *ngFor="let type of pokemonTypesList">
+            <div class="type-card" (click)="onClickPokemonTypeBtn(type.url)">{{type.name}}</div>
+        </article>
     </section>
-    <div *ngIf="isLoading">...Loading</div>
+    <pokemon-type [pokemonsList]="pokemonsList" [listView]="listView"></pokemon-type>
 </main>
