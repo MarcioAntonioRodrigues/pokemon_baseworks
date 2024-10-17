@@ -1,6 +1,17 @@
 <section *ngIf="pokemon" class="card dynamic-display">
-    <img [src]="pokemon.urlImage" alt="Place image title">
+    <h3>Nº: {{pokemon.id}}</h3>
     <h2>{{pokemon.name}}</h2>
+    <img [src]="pokemon.urlImage" alt="Place image title">
+    <div class="flex-container">
+        <p *ngFor="let item of pokemon.types">Tipo: {{item.type.name}}</p>
+    </div>
+    <div class="flex-container">
+        <p>Altura: {{pokemon.height}}</p>
+        <p>Peso: {{pokemon.weight}}</p>
+        <p *ngFor="let item of pokemon.abilities">
+            {{item.ability.name}}
+        </p>
+    </div>
     <div *ngFor="let stat of pokemon.stats">
         <p>{{stat.stat.name}}: {{stat.base_stat}}</p>
     </div>
