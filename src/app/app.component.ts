@@ -6,6 +6,7 @@ import { PokemonService } from "./services/pokemonService";
 
 import { HomeComponent } from "./components/home/home.component";
 import { PokemonDetailComponent } from "./components/pokemon-detail/pokemon-detail.component";
+import { HeaderComponent } from "./components/header/header.component";
 
 @Component({
 	selector: "app-root",
@@ -13,6 +14,7 @@ import { PokemonDetailComponent } from "./components/pokemon-detail/pokemon-deta
 	imports: [
 		RouterOutlet,
 		HomeComponent,
+		HeaderComponent,
 		PokemonDetailComponent,
 		HttpClientModule,
 	],
