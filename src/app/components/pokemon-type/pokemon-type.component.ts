@@ -38,7 +38,7 @@ export class PokemonTypeComponent {
 		this.toogleLoading();
 		this.getPokemons(this.currentPage, this.itemsPerPage).subscribe({
 			next: res => this.items = [...this.items, ...res],
-			complete: () => this.toogleLoading()
+			complete: () => this.isLoading = false
 		});
 	}
 
