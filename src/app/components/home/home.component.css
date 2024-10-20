@@ -1,28 +1,17 @@
-.card
+.type-card
 {
     margin: 5px;
     padding: 5px;
-    width: 150px;
+    color: #fff;
     cursor: pointer;
-    text-align: center;
-    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #5db9ff;
+    min-width: 60px;
 }
 
-.dashboard
+.display-list
 {
-    margin: 0 150px;
-}
-
-.type-card
-{
-    cursor: pointer;
-}
-
-/*infinite-scroll*/
-.search-results
-{
-    height: 30rem;
-    overflow: scroll;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    margin: 15px auto;
+    max-width: 600px;
 }
