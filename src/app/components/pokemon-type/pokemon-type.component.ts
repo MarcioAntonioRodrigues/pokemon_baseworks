@@ -15,6 +15,7 @@ import { PokemonService } from '../../services/pokemonService';
 export class PokemonTypeComponent {
 	public pokemonsList: any = [];
 	public listView: any = [];
+	public defaultImage = 'error.png';
 
 	// infinite-scroll //
 	public totalItems = 200;
@@ -37,7 +38,6 @@ export class PokemonTypeComponent {
 	appendData = () => {
 		this.toogleLoading();
 		this.getPokemons(this.currentPage, this.itemsPerPage).subscribe({
-			next: res => this.items = [...this.items, ...res],
 			complete: () => this.isLoading = false
 		});
 	}

@@ -1,10 +1,21 @@
 
 <main>
-    <section class="display-list">
+    <mat-form-field class="display-list">
+        <mat-label>Selecione o tipo de Pokemon</mat-label>
+        <mat-select>
+            <mat-option
+                [value]="type.name"
+                *ngFor="let type of pokemonTypesList"
+                (click)="onClickPokemonTypeBtn(type)">
+                {{type.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <!-- <section class="display-list">
         <h3>Selecione o tipo de Pokemon</h3>
         <article class="dynamic-display" *ngFor="let type of pokemonTypesList">
-            <div class="type-card dynamic-display" (click)="onClickPokemonTypeBtn(type.url)">{{type.name}}</div>
+            <div class="type-card dynamic-display" [ngClass]="{selected: type.selected}" (click)="onClickPokemonTypeBtn(type)">{{type.name}}</div>
         </article>
-    </section>
+    </section> -->
     <pokemon-type></pokemon-type>
 </main>

@@ -1,4 +1,4 @@
-<section class="dashboard dynamic-display search-results"
+<section class="dynamic-display search-results"
     infiniteScroll
     [infiniteScrollDistance]="2"
     [infiniteScrollThrottle]="500"
@@ -8,8 +8,8 @@
         class="card dynamic-display"
         *ngFor="let item of listView"
         (click)="goToDetail(item)">
-        <img [src]="item.image" alt="Place image title">
-        <p>{{item.name}} - {{item.id}}</p>
+        <img [src]="item.image" (error)="item.image = defaultImage" alt="Place image title">
+        <p>{{item.name}}</p>
     </div>
 </section>
 <div class="loader" *ngIf="isLoading"></div>

@@ -1,16 +1,52 @@
 .card
 {
-    margin: 5px;
+    z-index: 1;
+    margin: 10px;
     padding: 5px;
     width: 150px;
+    height: 150px;
     cursor: pointer;
     text-align: center;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid gray;
     text-transform: uppercase;
+    background-color: #fff;
 }
 
-.dashboard
+.card span
 {
-    margin: 0 150px;
+    background-color: #dbdad2;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: fit-content;
+    margin: -10px auto;
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.card p
+{
+    background-color: #dbdad2;
+    border: 1px solid gray;
+    text-overflow: ellipsis;
+    color: rgba(0,0,0,.7);
+    white-space: nowrap;
+    border-radius: 5px;
+    font-weight: bold;
+    overflow: hidden;
+    margin: 1px 0;
+    padding: 5px;
+}
+
+.card img
+{
+    width: 100px;
+    padding: 0 25px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #5db9ff;
 }
 
 .type-card
@@ -21,16 +57,18 @@
 /*infinite-scroll*/
 .search-results
 {
+    width: 60%;
     height: 30rem;
+    margin: 0 auto;
+    padding: 20px 0;
     overflow: scroll;
     border-radius: 5px;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgba(251,215,67, .3);
+    border: 1px solid rgba(0,0,0,.2);
 }
 
 /* HTML: <div class="loader"></div> */
 .loader {
+    z-index: 999999;
     position: absolute;
     top: 80%;
     left: calc(50% - 32px);

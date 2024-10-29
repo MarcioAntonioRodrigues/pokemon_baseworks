@@ -7,11 +7,19 @@
     border-radius: 5px;
     background-color: #5db9ff;
     min-width: 60px;
+    text-transform: capitalize;
 }
 
 .display-list
 {
     width: 100%;
-    margin: 15px auto;
     max-width: 600px;
+    margin: 15px auto;
+}
+
+.selected
+{
+    background-color: #ef5350;
+    transform: scale(1.1);
+    transition: .5s;
 }
