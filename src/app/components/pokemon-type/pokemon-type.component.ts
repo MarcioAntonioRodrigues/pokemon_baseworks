@@ -61,7 +61,7 @@ export class PokemonTypeComponent {
 								this.listView.push({
 									name: x.name,
 									id: x.id,
-									image: x.sprites.front_default
+									image: x.sprites.other.dream_world.front_default,
 								},)
 							},
 							complete: () => this.toogleLoading()

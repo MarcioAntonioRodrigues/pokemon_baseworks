@@ -1,0 +1,94 @@
+.detail-container
+{
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.border
+{
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0.5);
+}
+
+.general
+{
+    margin: 10px 5px;
+    padding: 10px;
+    text-align: left;
+}
+
+.base-info
+{
+    width: 390px;
+}
+
+.base-info article
+{
+    text-align: center;
+}
+
+.stats, .information
+{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.types
+{
+    justify-content: flex-start;
+}
+
+.types p
+{
+    color: #fff;
+    background: red;
+    padding: 10px 20px;
+    margin: 0 10px 10px;
+    border-radius: 20px;
+}
+
+.stats p:first-child
+{
+    width: 110px;
+    text-transform: capitalize;
+}
+
+.title
+{
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+aside
+{
+    width: 100%;
+}
+
+mat-progress-bar
+{
+    width: 200px;
+}
+
+figure
+{
+    width: 150px;
+    /* height: 128px; */
+    background-image: url("../../../../public/yellow-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center !important;
+}
+
+figure img
+{
+    width: 100px;
+    height: 120px;
+}
+
+h3
+{
+    margin: 0;
+    text-transform: capitalize;
+}

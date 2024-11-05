@@ -42,11 +42,12 @@
 
 .card img
 {
-    width: 100px;
+    width: 95px;
+    height: 100px;
     padding: 0 25px;
     margin-top: 5px;
     border-radius: 5px;
-    background-color: #5db9ff;
+    border: 1px solid rgba(0,0,0,.5);
 }
 
 .type-card

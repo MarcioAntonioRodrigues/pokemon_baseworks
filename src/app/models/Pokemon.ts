@@ -4,6 +4,7 @@ export interface IPokemon {
     types: Array<IPokemonType> | null;
     height: string | null;
     weight: string | null;
+    baseExperience: string | null;
     urlImage: string | null;
     abilities: Array<IAbility> | null;
     stats: Array<IPokemonStats> | null;

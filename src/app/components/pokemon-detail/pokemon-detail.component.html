@@ -1,19 +1,51 @@
-<section *ngIf="pokemon" class="card dynamic-display">
-    <h3>Nº: {{pokemon.id}}</h3>
-    <h2>{{pokemon.name}}</h2>
-    <img [src]="pokemon.urlImage" alt="Place image title">
-    <div class="flex-container">
-        <p *ngFor="let item of pokemon.types">Tipo: {{item.type.name}}</p>
-    </div>
-    <div class="flex-container">
-        <p>Altura: {{pokemon.height}}</p>
-        <p>Peso: {{pokemon.weight}}</p>
-        <p *ngFor="let item of pokemon.abilities">
-            {{item.ability.name}}
-        </p>
-    </div>
-    <div *ngFor="let stat of pokemon.stats">
-        <p>{{stat.stat.name}}: {{stat.base_stat}}</p>
-    </div>
+<main *ngIf="pokemon" class="detail-container">
+    <section class="border general">
+        <h4 class="title">{{pokemon.name}}</h4>
+    </section>
+    <aside class="flex-container">
+        <figure class="border general">
+            <img [src]="pokemon.urlImage" alt="{{pokemon.name}}">
+        </figure>
+        <section class="border general base-info">
+            <h4>Base Information</h4>
+            <div class="flex-container information">
+                <article>
+                    <p>Height</p>
+                    <p>{{pokemon.height}}m</p>
+                </article>
+                <article>
+                    <p>Weight</p>
+                    <p>{{pokemon.weight}}kg</p>
+                </article>
+                <article>
+                    <p>Base Exp.</p>
+                    <p>{{pokemon.baseExperience}}</p>
+                </article>
+            </div>
+        </section>
+    </aside>
+    <section class="border general">
+        <h4>Base stats</h4>
+        <div *ngFor="let stat of pokemon.stats" class="flex-container stats">
+            <p>{{stat.stat.name}}</p>
+            <p>{{stat.base_stat}}</p>
+            <mat-progress-bar mode="determinate" value="{{stat.base_stat}}"></mat-progress-bar>
+        </div>
+    </section>
+    <section class="general">
+        <h4>Types</h4>
+        <div class="flex-container types">
+            <p *ngFor="let item of pokemon.types">{{item.type.name}}</p>
+        </div>
+    </section>
+    <section class="general">
+        <h4>Habilities</h4>
+        <div class="flex-container types">
+            <p *ngFor="let item of pokemon.abilities">
+                {{item.ability.name}}
+            </p>
+        </div>
+    </section>
+    
     <button (click)="backToHome()">Voltar</button>
-</section>
+</main>
