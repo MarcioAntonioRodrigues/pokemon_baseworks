@@ -1,14 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { PokemonService } from '../../services/pokemonService';
+import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 import { IPokemon } from '../../models/Pokemon';
-import { CommonModule } from '@angular/common';
+import { BaseStatsEnum } from '../../enums/baseStatsEnum';
+import { PokemonService } from '../../services/pokemonService';
 
 @Component({
 	selector: 'pokemon-detail',
 	standalone: true,
-	imports: [CommonModule, MatProgressBarModule],
+	imports: [CommonModule, MatProgressBarModule, MatButtonModule],
 	templateUrl: './pokemon-detail.component.html',
 	styleUrl: './pokemon-detail.component.css'
 })
@@ -50,6 +53,10 @@ export class PokemonDetailComponent implements OnInit {
 			},
 			error: err => console.log('Error:', err)
 		});
+	}
+
+	public getEnumValue(name: string) {
+		return BaseStatsEnum[name as keyof typeof BaseStatsEnum];
 	}
 
 	public backToHome() {

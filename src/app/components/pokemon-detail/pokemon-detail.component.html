@@ -27,7 +27,7 @@
     <section class="border general">
         <h4>Base stats</h4>
         <div *ngFor="let stat of pokemon.stats" class="flex-container stats">
-            <p>{{stat.stat.name}}</p>
+            <p>{{getEnumValue(stat.stat.name)}}</p>
             <p>{{stat.base_stat}}</p>
             <mat-progress-bar mode="determinate" value="{{stat.base_stat}}"></mat-progress-bar>
         </div>
@@ -47,5 +47,5 @@
         </div>
     </section>
     
-    <button (click)="backToHome()">Voltar</button>
+    <button mat-flat-button (click)="backToHome()">Voltar</button>
 </main>

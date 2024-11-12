@@ -8,12 +8,13 @@
 .border
 {
     border-radius: 5px;
-    border: 1px solid rgba(0,0,0.5);
+    background-color: #fff;
+    border: 1px solid rgba(128,128,128, 1);
 }
 
 .general
 {
-    margin: 10px 5px;
+    margin: 10px 5px 0;
     padding: 10px;
     text-align: left;
 }
@@ -48,10 +49,14 @@
     border-radius: 20px;
 }
 
+.stats p
+{
+    margin: 0;
+}
+
 .stats p:first-child
 {
-    width: 110px;
-    text-transform: capitalize;
+    width: 50px;
 }
 
 .title
@@ -74,7 +79,6 @@ mat-progress-bar
 figure
 {
     width: 150px;
-    /* height: 128px; */
     background-image: url("../../../../public/yellow-background.png");
     background-repeat: no-repeat;
     background-size: cover;
