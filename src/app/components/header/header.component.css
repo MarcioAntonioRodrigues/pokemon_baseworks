@@ -1,11 +1,17 @@
 main
 {
     width: 100%;
-    height: 100px;
     margin: 0 auto;
-    max-width: 980px;
     text-align: center;
     background-color: #ef5350;
+}
+
+mat-toolbar
+{
+    background-color: #ef5350;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 h1
