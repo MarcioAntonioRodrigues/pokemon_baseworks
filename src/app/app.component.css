@@ -1,0 +1,101 @@
+mat-icon, button, a
+{
+    cursor: pointer;
+    font-size: 22px;
+    overflow: visible;
+    margin-right: 10px;
+}
+
+img
+{
+    margin-left: 30px;
+}
+
+
+.logo-name
+{
+    font-size: 25px;
+    margin-left: 35px;
+}
+
+.small-logo
+{
+    width: 35px;
+}
+
+.sidenav 
+{
+    top: 0;
+    left: 0;
+    width: 0;
+    z-index: 1; 
+    height: 100%; 
+    position: fixed;
+    transition: 0.5s;
+    padding-top: 60px;
+    overflow-x: hidden;
+    border: 1px solid rgba(0,0,0,.1);
+    background-color: #f5f6f7;
+}
+  
+.sidenav a 
+{
+    color: #000;
+    padding: 10px;
+    display: flex;
+    margin: 0 29px;
+    font-size: 20px;
+    transition: 0.3s;
+    border-radius: 10px;
+    text-decoration: none;
+}
+  
+.sidenav a:hover 
+{
+    transition: .5s;
+    background-color: rgba(128,128,128,.1);
+}
+
+.sidenav a:hover mat-icon
+{
+    transition: .4s; 
+    transform: scale(1.5);
+}
+  
+.sidenav .closebtn 
+{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.logo-container
+{
+    height: 50px;
+}
+  
+#main
+{
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+.search-container
+{
+    left: 100px;
+    height: 100%;
+    transition: 0.5s;
+    position: absolute;
+    background-color: #f5f6f7;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 0 10px 10px 0;
+    box-shadow: 1px 1px 11px -2px rgba(128,128,128,.3);
+}
+  
+@media screen and (max-height: 450px)
+{
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

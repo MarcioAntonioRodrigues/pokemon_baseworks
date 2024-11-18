@@ -1,2 +1,26 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<section class="sidenav" [ngStyle]="{ width : sideNavWidth }">
+    <div class="logo-container">
+        <p class="logo-name" *ngIf="!isSideNavOpen">PokemonApp</p>
+        <img src="pngegg.png" alt="" *ngIf="isSideNavOpen" class="small-logo">
+    </div>
+    <a href="#">
+        <mat-icon>home</mat-icon>
+        <span *ngIf="!isSideNavOpen">Home</span>
+    </a>
+    <a (click)="openNav()">
+        <mat-icon>search</mat-icon>
+        <span *ngIf="!isSideNavOpen">Pesquisa</span>
+    </a>
+    <a href="#">
+        <mat-icon>favorite</mat-icon>
+        <span *ngIf="!isSideNavOpen">Favoritos</span>
+    </a>
+</section>
+
+<section class="search-container" [ngStyle]="{ width : searchNavWidth }">
+    <p>Pesquisar</p>
+</section>
+
+<div id="main">
+    <router-outlet></router-outlet>
+</div>

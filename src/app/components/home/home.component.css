@@ -13,7 +13,8 @@
 .display-list
 {
     width: 100%;
-    max-width: 600px;
+    display: block;
+    max-width: 400px;
     margin: 15px auto;
 }
 
