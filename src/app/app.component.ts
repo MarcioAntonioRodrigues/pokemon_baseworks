@@ -2,7 +2,6 @@ import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from '@angular/common';
-import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { PokemonService } from "./services/pokemonService";
 
@@ -10,6 +9,8 @@ import { HomeComponent } from "./components/home/home.component";
 import { PokemonDetailComponent } from "./components/pokemon-detail/pokemon-detail.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { MatIconModule } from "@angular/material/icon";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
 
 @Component({
 	selector: "app-root",
@@ -22,7 +23,8 @@ import { MatIconModule } from "@angular/material/icon";
 		HttpClientModule,
 		CommonModule,
 		MatIconModule,
-		MatSidenavModule
+		MatFormFieldModule,
+		MatInputModule
 	],
 	providers: [
 		PokemonService,
@@ -32,19 +34,19 @@ import { MatIconModule } from "@angular/material/icon";
 })
 export class AppComponent {
 	title = "pokemonProject";
-	sideNavWidth = "250px";
-	searchNavWidth = "0px"
+	sideNavWidth = "280px";
+	searchNavPosition = "0px";
 	isSideNavOpen = false;
 
 	public openNav() {
 		this.isSideNavOpen = !this.isSideNavOpen;
 		if (!this.isSideNavOpen) {
-			this.sideNavWidth = "250px";
-			this.searchNavWidth = "0px";
+			this.sideNavWidth = "280px";
+			this.searchNavPosition = "0px";
 		}
 		else {
 			this.sideNavWidth = "100px";
-			this.searchNavWidth = "250px";
+			this.searchNavPosition = "100px";
 		}
 	}
 }

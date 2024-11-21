@@ -34,8 +34,8 @@ img
     transition: 0.5s;
     padding-top: 60px;
     overflow-x: hidden;
-    border: 1px solid rgba(0,0,0,.1);
     background-color: #f5f6f7;
+    border: 1px solid rgba(0,0,0,.1);
 }
   
 .sidenav a 
@@ -84,7 +84,6 @@ img
 
 .search-container
 {
-    left: 100px;
     height: 100%;
     transition: 0.5s;
     position: absolute;
@@ -92,6 +91,11 @@ img
     border: 1px solid rgba(0,0,0,.1);
     border-radius: 0 10px 10px 0;
     box-shadow: 1px 1px 11px -2px rgba(128,128,128,.3);
+}
+
+.search-content
+{
+    margin: 10px 30px;
 }
   
 @media screen and (max-height: 450px)
