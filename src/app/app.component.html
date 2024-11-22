@@ -1,8 +1,8 @@
 <section class="sidenav" [ngStyle]="{ width : sideNavWidth }">
-    <div class="logo-container">
+    <a href="">
         <p class="logo-name" *ngIf="!isSideNavOpen">PokemonApp</p>
-        <img src="pngegg.png" alt="" *ngIf="isSideNavOpen" class="small-logo">
-    </div>
+        <img src="pokeball_icon.png" alt="" *ngIf="isSideNavOpen" class="small-logo">
+    </a>
     <a href="#">
         <mat-icon>home</mat-icon>
         <span *ngIf="!isSideNavOpen">Home</span>
