@@ -35,18 +35,18 @@ import { MatInputModule } from "@angular/material/input";
 export class AppComponent {
 	title = "pokemonProject";
 	sideNavWidth = "200px";
-	searchNavPosition = "-80px";
+	searchNavPosition = "-130px";
 	isSideNavOpen = false;
 
 	public openNav() {
 		this.isSideNavOpen = !this.isSideNavOpen;
 		if (!this.isSideNavOpen) {
 			this.sideNavWidth = "200px";
-			this.searchNavPosition = "-80px";
+			this.searchNavPosition = "-130px";
 		}
 		else {
-			this.sideNavWidth = "100px";
-			this.searchNavPosition = "100px";
+			this.sideNavWidth = "60px";
+			this.searchNavPosition = "60px";
 		}
 	}
 }

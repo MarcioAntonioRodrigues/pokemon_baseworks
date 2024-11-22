@@ -36,7 +36,7 @@ mat-icon, button, a
 {
     color: #000;
     display: flex;
-    margin: 0 29px;
+    margin: 0 9px;
     font-size: 14px;
     transition: 0.3s;
     padding: 5px 10px;
@@ -91,6 +91,21 @@ mat-icon, button, a
 .search-content
 {
     margin: 10px 30px;
+}
+
+label
+{
+    display: block;
+}
+
+input
+{
+    border: none;
+    width: 240px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .1);
 }
   
 @media screen and (max-height: 450px)
