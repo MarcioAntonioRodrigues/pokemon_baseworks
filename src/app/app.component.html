@@ -4,7 +4,7 @@
         <img src="pokeball_icon.png" alt="" *ngIf="isSideNavOpen" class="small-logo">
     </a>
     <a href="#">
-        <mat-icon>home</mat-icon>
+        <mat-icon class="material-icons-outlined">home</mat-icon>
         <span *ngIf="!isSideNavOpen">Home</span>
     </a>
     <a (click)="openNav()">
@@ -12,7 +12,7 @@
         <span *ngIf="!isSideNavOpen">Pesquisa</span>
     </a>
     <a href="#">
-        <mat-icon>favorite</mat-icon>
+        <mat-icon>favorite_border</mat-icon>
         <span *ngIf="!isSideNavOpen">Favoritos</span>
     </a>
 </section>

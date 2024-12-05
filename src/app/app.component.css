@@ -1,9 +1,11 @@
 mat-icon, button, a
 {
     cursor: pointer;
-    font-size: 22px;
+    font-size: 30px;
     overflow: visible;
     margin-right: 10px;
+    text-align: center;
+    align-items: center;
 }
 
 .logo-name
@@ -36,8 +38,8 @@ mat-icon, button, a
 {
     color: #000;
     display: flex;
-    margin: 0 9px;
-    font-size: 14px;
+    margin: 10px;
+    font-size: 17px;
     transition: 0.3s;
     padding: 5px 10px;
     border-radius: 10px;
@@ -50,10 +52,15 @@ mat-icon, button, a
     background-color: rgba(128,128,128,.1);
 }
 
-.sidenav a:hover mat-icon
+/* .sidenav a:hover mat-icon
 {
     transition: .4s; 
     transform: scale(1.5);
+} */
+
+.sidenav a span
+{
+    margin-top: 5px;
 }
   
 .sidenav .closebtn 

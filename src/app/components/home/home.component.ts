@@ -7,6 +7,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { PokemonService } from "../../services/pokemonService";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { PokemonTypeComponent } from "../pokemon-type/pokemon-type.component";
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
 	selector: "home",
@@ -16,15 +17,22 @@ import { PokemonTypeComponent } from "../pokemon-type/pokemon-type.component";
 		PokemonTypeComponent,
 		MatFormFieldModule,
 		MatSelectModule,
+		MatIconModule,
 		MatInputModule],
 	templateUrl: "./home.component.html",
 	styleUrl: "./home.component.css",
 })
 export class HomeComponent implements OnInit {
+
+	public right: number = 200;
+	public left: number = -200;
+	public currentPage: number = 1;
+
 	public listView: any = [];
 	public pokemonsList: any = [];
-	public currentPage: number = 1;
 	public pokemonTypesList: any = [];
+
+	public transform: any = "translateX(0px)";
 
 	@ViewChild(PokemonTypeComponent) child: PokemonTypeComponent;
 
@@ -46,7 +54,6 @@ export class HomeComponent implements OnInit {
 	}
 
 	public onClickPokemonTypeBtn(item: any) {
-		this.changeSelectedBtnColor(item);
 		this.child.resetValues();
 		fetch(item.url)
 			.then(res => res.json())
@@ -54,10 +61,9 @@ export class HomeComponent implements OnInit {
 			.then(() => this.child.getPokemons())
 	}
 
-	public changeSelectedBtnColor(item: any) {
-		item.selected = true;
-		this.pokemonTypesList.map((x: any) => {
-			if (x.name != item.name) { x.selected = false }
-		});
+	public slideBy(value: number) {
+		const caroussel = document.getElementById("caroussel");
+		if (caroussel)
+			caroussel.scrollBy({ left: value, behavior: 'smooth' });
 	}
 }

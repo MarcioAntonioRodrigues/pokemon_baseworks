@@ -1,15 +1,16 @@
 
 <main>
-    <mat-form-field class="display-list">
-        <mat-label>Selecione o tipo de Pokemon</mat-label>
-        <mat-select>
-            <mat-option
-                [value]="type.name"
-                *ngFor="let type of pokemonTypesList"
+    <article class="flex-container caroussel-container">
+        <mat-icon (click)="slideBy(left)">keyboard_arrow_left</mat-icon>
+        <section class="flex-container caroussel" id="caroussel">
+            <article 
+                *ngFor="let type of pokemonTypesList" 
                 (click)="onClickPokemonTypeBtn(type)">
-                {{type.name}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+                <img src="pikachu.png" alt="{{type.name}}">
+                <p>{{type.name}}</p>
+            </article>
+        </section>
+        <mat-icon (click)="slideBy(right)">keyboard_arrow_right</mat-icon>
+    </article>
     <pokemon-type></pokemon-type>
 </main>

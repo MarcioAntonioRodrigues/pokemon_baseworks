@@ -24,3 +24,31 @@
     transform: scale(1.1);
     transition: .5s;
 }
+
+.caroussel-container
+{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.caroussel
+{
+    width: 80%;
+    overflow: auto;
+    margin: 20px auto;
+}
+
+.caroussel article
+{
+    cursor: pointer;
+    margin: 9px;
+}
+
+.caroussel article img
+{
+    width: 56px;
+    padding: 3px;
+    border-radius: 50%;
+    margin-bottom: -10px;
+    border: 3px solid orange;
+}

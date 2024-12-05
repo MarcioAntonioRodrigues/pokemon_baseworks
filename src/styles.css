@@ -1,4 +1,5 @@
 @import "../node_modules/@angular/material/prebuilt-themes/azure-blue.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
 
 body
 {
@@ -32,6 +33,11 @@ main
 input
 {
     outline: none;
+}
+
+mat-icon
+{
+    cursor: pointer;
 }
 
 html, body { height: 100%; }
