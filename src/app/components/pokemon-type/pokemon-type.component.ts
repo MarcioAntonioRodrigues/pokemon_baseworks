@@ -2,13 +2,15 @@ import { delay, of } from 'rxjs';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { PokemonService } from '../../services/pokemonService';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
 	selector: 'pokemon-type',
 	standalone: true,
-	imports: [CommonModule, InfiniteScrollModule],
+	imports: [CommonModule, InfiniteScrollModule, MatCardModule, MatIconModule],
 	templateUrl: './pokemon-type.component.html',
 	styleUrl: './pokemon-type.component.css'
 })
